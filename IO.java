@@ -12,13 +12,18 @@ public class IO
         pw.close();
     }
 
-    public static String readFromFile () throws IOException
+    public static String readFromFile (String sFilePath) throws IOException
     {
-        String fileName = "in.txt";
 
-        BufferedReader br = new BufferedReader (new FileReader(fileName));
+        BufferedReader br = new BufferedReader (new FileReader(sFilePath));
         String s = br.readLine();
         br.close();
         return s;
+    }
+
+    public static int characterCount(String sFilePath)
+    {
+        String sData = readFromFile(sFilePath);
+        return sData.length();
     }
 }
